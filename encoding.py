@@ -55,9 +55,8 @@ def tap_code_translation(text):
                     output.append('.' * code[0] + ' ' + '.' * code[1] + ' ')
                 if len(i) > 1:
                     if symb in i:
-                        code = 1, 3
-                        output.append('.' * code[0] + ' ' + '.' * code[1] + ' ')
+                        output.append('. ... ')
     return ''.join(output)[:-1]
 
-string = 'ckck'.upper()
+string = 'doc'.upper()
 print(tap_code_translation(string))
