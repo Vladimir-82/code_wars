@@ -11,4 +11,12 @@
 # XO("ooxXm") => true
 # XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
 # XO("zzoo") => false
+def xo(s):
+    if s.count('x') == s.count('o'):
+        return True
+    elif 'x' not in s and 'o' not in s:
+        return True
+    else:
+        return False
 
+print(xo("zzoo".lower()))
