@@ -12,12 +12,21 @@ def list_squared(m, n):
     Пример:
     list_squared(1, 250) -> [[1, 1], [42, 2500], [246, 84100]]
     list_squared(42, 250) -> [[42, 2500], [246, 84100]]'''
-    lst_devisers = [i for i in range(m, n + 1) if n % i == 0]
 
-    print(lst)
-    if sum(lst)** 0.5 % 1 == 0:
-        print(True)
-    # lst = [i for i in range(m, n + 1) if n % i == 0 if sum([i ** 2]) ** 0.5 % 1 == 0]
-    return lst_devisers
+    sqr = [[i**2 for i in range(m, n + 1) if n % i == 0] for n in range(m, n + 1)]
+    print(sqr)
+    sum_squear = []
+    number = []
 
-print(list_squared(1, 247))
+    filter_list = list(filter(lambda x: sum(x)**0.5 % 1 == 0, sqr))
+    print(filter_list)
+    # for i in filter_list:
+    #     if sum(i)**0.5 % 1 == 0:
+
+    #         number.append(sqr.index(i) + 1)
+    #         sum_squear.append(sum(i))
+    # print(sum_squear)
+    # answer = list(zip(number, sum_squear))
+    # return answer
+
+list_squared(42, 250)

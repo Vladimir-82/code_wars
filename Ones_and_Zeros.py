@@ -11,14 +11,17 @@ def binary_array_to_number(arr):
     Testing: [1, 1, 1, 1] ==> 15
     Testing: [1, 0, 1, 1] ==> 11
     '''
-    lst_exit = []
-    lst = [str(i) for i in arr]
-    step = len(lst) - 1
-    for i in lst:
-        lst_exit.append(int(i) * 2 ** step)
-        step -= 1
-    return sum(lst_exit)
+    # lst_exit = []
+    # lst = [str(i) for i in arr]
+    # step = len(lst) - 1
+    # for i in lst:
+    #     lst_exit.append(int(i) * 2 ** step)
+    #     step -= 1
+    # return sum(lst_exit)
+
+    return int(''.join(str(i) for i in arr), 2)
 
 
-arr = [1, 1, 1, 1]
+
+arr = [1, 1, 1, 0]
 print(binary_array_to_number(arr))
